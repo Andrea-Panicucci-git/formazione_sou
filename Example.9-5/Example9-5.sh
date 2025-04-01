@@ -8,8 +8,7 @@ ROOT_UID
 then 
   echo "You are root." # allora, stampa: Sei root
 else
-  echo "You are just an ordinary user (but mom loves you just the same)." # differentemente stampa: sei soltanto un user ordinario (ma mamma ti 
-ama lo  stesso)
+  echo "You are just an ordinary user (but mom loves you just the same)." # differentemente stampa: sei soltanto un user ordinario (ma mamma ti ama lo  stesso)
 fi # fine ciclo if 
  
 exit 0 # successo dello script
@@ -26,5 +25,5 @@ if [ "$username" = "$ROOTUSER_NAME" ] # ciclo if che imposta una condizione sull
 then
   echo "Rooty, toot, toot. You are root." # se uguali stampa: Rooty, toot , toot. You are root.
 else
-  echo "You are just a regular fella." se diversi stampa: you are just a regular fella 
+  echo "You are just a regular fella."  # se diversi stampa: you are just a regular fella 
 fi # fine ciclo
