@@ -3,8 +3,7 @@
  
 ROOT_UID=0   # Root has $UID 0.
  
-if [ "$UID" -eq "$ROOT_UID" ]  # Will the real "root" please stand up? # ciclo if che imposta una condizione sull'UID: se UID è equivalente al 
-ROOT_UID 
+if [ "$UID" -eq "$ROOT_UID" ]  # Will the real "root" please stand up? # ciclo if che imposta una condizione sull'UID: se UID è equivalente al ROOT_UID 
 then 
   echo "You are root." # allora, stampa: Sei root
 else
