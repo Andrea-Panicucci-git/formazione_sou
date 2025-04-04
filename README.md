@@ -31,65 +31,7 @@ cd /var/log
 cat /dev/null > messages
 cat /dev/null > wtmp
 echo "Log files cleaned up."
+```
 ---
 
-## Tecnologie Usate
 
-- **Linguaggio di programmazione**: Python, JavaScript, Java, ecc.
-- **Framework**: Flask, Django, React, ecc.
-- **Database**: MySQL, MongoDB, ecc.
-
----
-
-## Installazione
-
-Per eseguire questo progetto, segui i passaggi sottostanti:
-
-1. Clona il repository:
-    ```bash
-    git clone https://github.com/tuousername/progetto.git
-    ```
-2. Naviga nella directory del progetto:
-    ```bash
-    cd progetto
-    ```
-3. Installa le dipendenze:
-    - Se utilizzi **npm**:
-        ```bash
-        npm install
-        ```
-    - Se utilizzi **pip**:
-        ```bash
-        pip install -r requirements.txt
-        ```
-
----
-
-## Uso
-
-Per avviare il progetto, esegui uno dei seguenti comandi a seconda del tipo di progetto:
-
-- **Applicazione web (Flask/React)**:
-    ```bash
-    npm start  # React
-    python app.py  # Flask
-    ```
-
-- **Script di esempio**:
-    ```bash
-    python script.py
-    ```
-
----
-
-## Esempi
-
-### Esempio 1: Utilizzo di una funzione
-
-```python
-def somma(a, b):
-    return a + b
-
-# Esempio di utilizzo
-result = somma(3, 4)
-print(result)  # Output: 7
