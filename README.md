@@ -2,7 +2,7 @@
 
 ## Introduzione:
 
-Questo è...
+Questo repository contiene esercizi introduttivi in Bash:
 
 ## Sommario:
 
@@ -38,7 +38,12 @@ echo "Log files cleaned up."
 
 ### Descrizione:
 
-Questo script...
+Entrambi gli script hanno lo stesso obiettivo: verificare se l'utente che esegue lo script è root.
+
+Primo script:
+In questo caso, lo script confronta l'UID dell'utente che sta eseguendo lo script ($UID) con l'UID di root ($ROOT_UID). Se i due valori sono uguali (-eq), lo script stampa il messaggio "You are root".
+Secondo script:
+Anche in questo script l'obiettivo è verificare se l'utente è root, ma invece di confrontare gli UID, si confrontano i nomi degli utenti: la variabile $ROOTUSER_NAME (che contiene il nome dell'utente root) viene confrontata con il nome dell'utente che sta eseguendo lo script ($username). Se i due nomi coincidono, lo script stampa il messaggio "You are root".
 
 ### Codice:
 
@@ -78,7 +83,13 @@ fi
 
 ### Descrizione:
 
-Questo script...
+Questo script ha l'obiettivo di stampare i primi tre parametri e il decimo parametro passati come argomenti da riga di comando. Lo script procederà a stampare ciascuno di questi parametri su una riga separata, a condizione che siano forniti almeno dieci parametri.
+
+Nel caso in cui non vengano forniti parametri oppure il numero di parametri sia inferiore a dieci, lo script stamperà il messaggio di errore:
+```bash
+This script needs at least $MINPARAMS command-line arguments!
+```
+Dove $MINPARAMS rappresenta il numero minimo di parametri richiesti (ovvero 10).
 
 ### Codice:
 
@@ -141,7 +152,10 @@ exit 0
 
 ### Descrizione:
 
-Questo script 
+Assegnazioni dirette: Le variabili vengono assegnate direttamente senza l'uso di comandi complessi, semplificando il processo di gestione dei dati all'interno dello script.
+Operazioni aritmetiche con il comando let: Viene utilizzato il comando let per eseguire operazioni aritmetiche. Questo comando permette di eseguire calcoli come somma, sottrazione, moltiplicazione, ecc., direttamente sulle variabili.
+Cicli for: Lo script sfrutta i cicli for per iterare su una sequenza di valori, consentendo l'esecuzione ripetuta di un blocco di codice.
+Input dell'utente tramite il comando read: Il comando read viene utilizzato per acquisire l'input dell'utente e memorizzarlo in una variabile. Questo consente una maggiore interazione e personalizzazione dello script.
 
 ### Codice:
 
@@ -189,7 +203,11 @@ exit 0
 
 ### Descrizione:
 
-Questo script...
+Questo script esegue le seguenti operazioni:
+
+- Stampa del messaggio "hello": Lo script utilizza il comando echo per stampare "hello" sulla console. Il codice di uscita di echo è 0, che indica che il comando è stato eseguito correttamente senza errori.
+- Tentativo di eseguire un comando inesistente: Successivamente, lo script tenta di eseguire il comando lskdf, che non esiste. Poiché il comando non viene trovato, il codice di uscita sarà 127, che segnala un errore (comando non trovato).
+- Terminazione dello script con un codice di uscita personalizzato: Infine, lo script termina con il codice di uscita 113, che rappresenta una condizione di uscita personalizzata definita dallo script stesso.
 
 ### Codice:
 
@@ -217,7 +235,13 @@ exit 113   # Will return 113 to shell.
 
 ### Descrizione:
 
-Questo script...
+Questo script utilizza un array associativo per memorizzare gli indirizzi di tre persone. Le chiavi dell'array sono i nomi (Charles, John, Wilma), mentre i valori sono gli indirizzi corrispondenti. Dopo aver memorizzato i dati nell'array, lo script stampa gli indirizzi associati a ciascun nome.
+
+Infine, lo script utilizza il comando:
+```bash
+echo ${!address[*]}
+```
+per stampare un elenco di tutte le chiavi dell'array, ossia i nomi delle persone, mostrando così tutte le chiavi (Charles, John, Wilma) che sono state memorizzate nell'array associativo.
 
 ### Codice:
 
@@ -299,4 +323,4 @@ exit $?
 ---
 # Conclusioni:
 
-Questi esercizi...
+In questi esercizi, abbiamo esplorato concetti fondamentali di scripting Bash: gestione dei file di log, controllo dell'utente root, manipolazione dei parametri da riga di comando, gestione delle variabili, gestione degli exit status, uso degli array associativi e implementazione di una barra di progresso. 
