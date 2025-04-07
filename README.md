@@ -1,7 +1,14 @@
 # Step 8 - Script Coding Mirroring
 
-[Esercizio 1: CleanUp](Clean-Up)
+## Sommario:
 
+1.[Esercizio 1: CleanUp](Clean-Up)
+2.[]()
+3.[]()
+4.[]()
+5.[]()
+6.[]()
+7.[]()
 
 
 
