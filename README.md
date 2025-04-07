@@ -1,5 +1,9 @@
 # Step 8 - Script Coding Mirroring
 
+## Introduzione:
+
+Questo è...
+
 ## Sommario:
 
 1. [Esercizio 1: CleanUp](#Clean-Up)
@@ -15,7 +19,7 @@
 
 ### Descrizione:
 
-Questo script...
+Questo script 
 
 ### Codice:
 
