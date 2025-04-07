@@ -19,7 +19,7 @@ Questo è...
 
 ### Descrizione:
 
-Questo script 
+Questo script ha l'obiettivo di cancellare i log di sistema generali (contenuti nel file messages) e i log degli accessi (contenuti nel file wtmp), liberando così lo spazio occupato da tali informazioni.
 
 ### Codice:
 
@@ -141,7 +141,7 @@ exit 0
 
 ### Descrizione:
 
-Questo script...
+Questo script 
 
 ### Codice:
 
@@ -251,7 +251,15 @@ echo "${!address[*]}"   # The array indices ...
 
 ### Descrizione:
 
-Questo script...
+L'obiettivo principale di questo script è mostrare una barra di progresso. Per fare ciò, avvia un processo in background che genera ogni secondo un punto (".") tramite un ciclo infinito while True.
+
+Nel momento in cui viene premuto ^C, viene eseguito il seguente comando:
+```bash
+trap "echo !; kill -USR1 $pid; wait $pid" EXIT
+```
+Questo comando invia il segnale SIGUSR1 al processo in esecuzione, terminandolo. Quando il processo riceve il segnale SIGUSR1, esegue un'altra trap che esegue il comando exit, interrompendo così il ciclo infinito.
+
+Se si commenta la riga di comando con trap "echo !; kill -USR1 $pid; wait $pid" EXIT, il ciclo non verrà più interrotto tramite ^C, poiché il segnale SIGUSR1 non verrà più inviato. Di conseguenza, sarà necessario fermare manualmente il processo utilizzando il comando kill.
 
 ### Codice:
 
