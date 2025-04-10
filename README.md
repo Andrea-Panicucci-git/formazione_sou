@@ -6,8 +6,8 @@ Questo repository contiene esercizi introduttivi in Bash:
 
 ## Sommario:
 
-1. [Esercizio 1: CleanUp](Clean-Up)
-2. [Esercizio 2: Am I root?](Am-I-Root?)
+1. [Esercizio 1: CleanUp](#Clean-Up)
+2. [Esercizio 2: Am I root?](#Am-I-Root?)
 3. [Esercizio 3: Positional Parameters](#Posiotional-Parameters)
 4. [Esercizio 4: Plain Variable Assignment](#Plain-Variable-Assignment)
 5. [Esercizio 5: Exit Status](#Exit-Status)
