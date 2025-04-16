@@ -58,14 +58,5 @@ Questo crea un comportamento "ping-pong" in cui **solo un nodo alla volta esegue
 
 ---
 
-## 📜 File `inventory.ini`
-
-```ini
-[nodo1]
-192.168.30.22 ansible_user=vagrant ansible_ssh_private_key_file=~/.ssh/id_rsa
-
-[nodo2]
-192.168.30.23 ansible_user=vagrant ansible_ssh_private_key_file=~/.ssh/id_rsa
-```
 
 
