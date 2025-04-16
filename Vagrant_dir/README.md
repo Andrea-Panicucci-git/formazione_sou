@@ -1,6 +1,8 @@
 # 📦 Vagrant Setup con Ubuntu 24.04, Apache2 e Icecast2
 
+
 Questo progetto utilizza **Vagrant** per creare una macchina virtuale basata su **Ubuntu 24.04**, con installazione automatica di **Apache2** e **Icecast2**
+
 ---
 
 ## 🚀 Requisiti
