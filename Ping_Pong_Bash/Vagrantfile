@@ -1,0 +1,66 @@
+Vagrant.configure("2") do |config|
+  config.vm.define "nodo1" do |nodo1|                       # Definizione del primo nodo (nodo1)
+    nodo1.vm.box = "hashicorp-education/ubuntu-24-04"
+    nodo1.vm.hostname = "nodo1"
+    nodo1.vm.network "private_network", ip: "192.168.30.20"
+    
+    # Condivisione cartella con VM
+    nodo1.vm.synced_folder ".", "/vagrant"
+
+    nodo1.vm.provision "shell", inline: <<-SHELL
+      sudo apt-get update
+      sudo apt-get install -y docker.io sshpass
+      sudo usermod -aG docker vagrant
+      docker pull ealen/echo-server
+      docker run 
+
+      # Copia gli script nella home di vagrant
+      cp /vagrant/pingpong.sh /home/vagrant/pingpong.sh
+      cp /vagrant/setup.sh /home/vagrant/setup.sh
+      chmod +x /home/vagrant/pingpong.sh /home/vagrant/setup.sh
+
+      # Esegui lo script SSH setup
+      su - vagrant -c "/home/vagrant/setup.sh"
+
+      # Crea il service file per systemd
+      bash -c 'cat <<EOF > /etc/systemd/system/pingpong.service #inserimento in pingpong.service
+[Unit]
+
+Description=Pingpong Container                         
+After=network.target                                  
+
+[Service]
+
+ExecStart=/home/vagrant/pingpong.sh                    
+User=vagrant                                           
+Restart=always                                         
+RestartSec=10                                          
+
+[Install]
+
+WantedBy=multi-user.target
+
+
+EOF'                                                    # end of file
+                                             
+
+      # Abilitazione del servizio
+      systemctl daemon-reexec
+      systemctl daemon-reload
+      systemctl enable pingpong.service
+      systemctl start pingpong.service
+    SHELL
+  end 
+
+  config.vm.define "nodo2" do |nodo2|  # # Definizione del secondo nodo (nodo2)
+    nodo2.vm.box = "hashicorp-education/ubuntu-24-04"
+    nodo2.vm.hostname = "nodo2"
+    nodo2.vm.network "private_network", ip: "192.168.30.21"
+    nodo2.vm.provision "shell", inline: <<-SHELL
+      sudo apt-get update
+      sudo apt-get install -y docker.io sshpass
+      sudo usermod -aG docker vagrant
+      docker pull ealen/echo-server
+    SHELL
+  end
+end

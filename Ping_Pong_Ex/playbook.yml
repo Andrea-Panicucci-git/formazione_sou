@@ -1,0 +1,63 @@
+- name: Installazione Docker.io!
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Stampa messaggio di saluto
+      debug:
+        msg: "Ciao mondo, questo è il mio progetto ping-pong con Ansible!!!"
+
+    - name: Aggiorna tutti i pacchetti
+      package:
+        update_cache: yes
+    - name: Copiare la chiave SSH
+      ansible.builtin.authorized_key:
+        user: vagrant
+        state: present
+        key: "{{ lookup('file', '/Users/andreapanicucci/.ssh/id_rsa.pub') }}"
+    - name: Installa Docker.io
+      package:
+        name: docker.io
+        state: present
+
+    - name: Abilita e avvia il servizio Docker
+      systemd:
+        name: docker
+        enabled: yes
+        state: started
+    
+- name: Container1 su ealen/echo-server
+  hosts: nodo1
+  become: YES
+
+  tasks:
+    - name: accensoine container1
+      ansible.builtin.cron:
+        name: container1 start
+        minute: "1-59/2" # Avvia il cronjob i minuti dispari 
+        job: "docker run -d -p 3000:80 --name echo-server ealen/echo-server"
+    
+    - name: spegnimento container1 
+      ansible.builtin.cron:
+        name: container1 stop
+        minute: "*/2"
+        job: "docker rm -f echo-server"
+
+- name: Container2 su ealen/echo-server
+  hosts: nodo2
+  become: yes
+
+  tasks: 
+    - name: accensione container2
+      ansible.builtin.cron: 
+        name: container1 run
+        minute: "*/2"
+        job: "docker run -d -p 3000:80 --name echo-server ealen/echo-server"
+
+    - name: spegnimento container2
+      ansible.builtin.cron:
+        name: container2 stop
+        minute: "1-59/2"
+        job: "docker rm -f echo-server"
+
+ 
