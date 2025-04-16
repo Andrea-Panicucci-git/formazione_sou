@@ -1,3 +1,7 @@
 # Ignora il file .DS_Store
 .DS_Store
+<<<<<<< HEAD
 .vagrant
+=======
+/.vagrant
+>>>>>>> 2219ef35e31e37ebb96bb0d2ac793f3493682445
