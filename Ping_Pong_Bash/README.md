@@ -12,5 +12,5 @@ Questo progetto usa **Vagrant** per creare due macchine virtuali Ubuntu 24.04 (`
 
 ---
 
-#  Descrizione
+# 📦 Descrizione
 
