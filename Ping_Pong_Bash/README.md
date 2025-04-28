@@ -57,7 +57,7 @@ Questo comando:
 
 ## Funzionamento
 
-nodo1 esegue il servizio pingpong.sh come demone systemd.
-Il container ping-pong (ealen/echo-server) viene avviato su un nodo, attende 60 secondi, poi viene avviato sull'altro nodo.
-Questo processo continua in loop infinito.
-Tutti i log vengono salvati su /home/vagrant/pingpong.log su nodo1.
+- nodo1 esegue il servizio pingpong.sh come demone systemd.
+- Il container ping-pong (ealen/echo-server) viene avviato su un nodo, attende 60 secondi, poi viene avviato sull'altro nodo.
+- Questo processo continua in loop infinito.
+- Tutti i log vengono salvati su /home/vagrant/pingpong.log su nodo1.
