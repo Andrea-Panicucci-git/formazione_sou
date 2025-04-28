@@ -1,10 +1,10 @@
-# 🐧 Vagrant + Ansible: Progetto "Ping-Pong Docker" con Echo Server
+#  Vagrant + Ansible: Progetto "Ping-Pong Docker" con Echo Server
 
 Questo progetto configura due macchine virtuali Ubuntu 24.04 con **Vagrant**, automatizzando la provisioning con **Ansible** per installare Docker, configurare le chiavi SSH e orchestrare l'avvio e lo spegnimento alternato di container **Echo Server** su entrambi i nodi.
 
 ---
 
-## 🧰 Tecnologie Utilizzate
+##  Tecnologie Utilizzate
 
 - 🖥️ [Vagrant](https://www.vagrantup.com/)
 - 📦 [VirtualBox](https://www.virtualbox.org/)
@@ -16,10 +16,10 @@ Questo progetto configura due macchine virtuali Ubuntu 24.04 con **Vagrant**, au
 
 ---
 
-## ⚙️ Funzionalità principali
+##  Funzionalità principali
 
-### 🔁 Due nodi configurati:
-📜 File `inventory.ini`
+###  Due nodi configurati:
+ File `inventory.ini`
 
 ```ini
 [nodo1]
@@ -30,7 +30,7 @@ Questo progetto configura due macchine virtuali Ubuntu 24.04 con **Vagrant**, au
 ```
 ---
 
-### 🛠️ Provisioning Ansible
+###  Provisioning Ansible
 
 Il playbook `playbook.yml` esegue le seguenti azioni su **entrambi i nodi**:
 
@@ -42,7 +42,7 @@ Il playbook `playbook.yml` esegue le seguenti azioni su **entrambi i nodi**:
 
 ---
 
-### 🧪 Container Echo Server
+###  Container Echo Server
 
 L'immagine [`ealen/echo-server`](https://hub.docker.com/r/ealen/echo-server) è un container di test che stampa la richiesta ricevuta. I container vengono gestiti così:
 
@@ -57,7 +57,7 @@ L'immagine [`ealen/echo-server`](https://hub.docker.com/r/ealen/echo-server) è 
 Questo crea un comportamento "ping-pong" in cui **solo un nodo alla volta esegue il container**.
 
 ---
-## ⚙️ Come avviare la macchina virtuale
+##  Come avviare la macchina virtuale
 
 1. **Clona questo repository** o scarica il Vagrantfile.
 2. Apri un terminale nella cartella dove si trova il `Vagrantfile`.
