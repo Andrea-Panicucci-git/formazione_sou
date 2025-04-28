@@ -57,6 +57,15 @@ L'immagine [`ealen/echo-server`](https://hub.docker.com/r/ealen/echo-server) è 
 Questo crea un comportamento "ping-pong" in cui **solo un nodo alla volta esegue il container**.
 
 ---
+## ⚙️ Come avviare la macchina virtuale
+
+1. **Clona questo repository** o scarica il Vagrantfile.
+2. Apri un terminale nella cartella dove si trova il `Vagrantfile`.
+3. Avvia la VM con:
+
+```bash
+vagrant up
+```
 
 
 
